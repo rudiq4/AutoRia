@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url("../fonts/Roboto_Regular/RobotoSlab-Regular.eot");
+  src: url("../fonts/Roboto_Regular/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Regular/RobotoSlab-Regular.woff2") format("woff2"), url("../fonts/Roboto_Regular/RobotoSlab-Regular.woff") format("woff"), url("../fonts/Roboto_Regular/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat Regular';
+  src: url("../fonts/Montserrat_Regular/Montserrat-Regular.eot");
+  src: url("../fonts/Montserrat_Regular/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat_Regular/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat_Regular/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat_Regular/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans/OpenSans-CondensedLight.eot");
+  src: url("../fonts/OpenSans/OpenSans-CondensedLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-CondensedLight.woff2") format("woff2"), url("../fonts/OpenSans/OpenSans-CondensedLight.woff") format("woff"), url("../fonts/OpenSans/OpenSans-CondensedLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
