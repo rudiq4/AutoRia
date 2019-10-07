@@ -119,12 +119,10 @@
   display: flex;
   flex-basis: 80%;
   padding-left: 15px; }
-  .goods__car__image {
-    width: 300px;
-    height: 200px; }
     .goods__car__image-image {
-      width: 100%;
-      height: auto; }
+       width: 300px;
+       height: 200px;
+       object-fit: cover;}
   .goods__car__description {
     flex-basis: 75%;
     padding-left: 15px;
