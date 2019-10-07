@@ -1,13 +1,16 @@
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
+from .views import *
+from . import views
+from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'AutoRia'
+app_name = 'main'
 
 urlpatterns = [
-                  url(r'^admin/', admin.site.urls, name='admin'),
-                  url(r'^', include('main.urls', namespace='main')),
+
+                  url(r'^$', views.index_view, name='index'),
+
               ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

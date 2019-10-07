@@ -79,7 +79,7 @@ Rudik = 'Bender'
 
 LANGUAGE_CODE = 'uk'
 
-TIME_ZONE = 'Ukraine/Kiev'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
