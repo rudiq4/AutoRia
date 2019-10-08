@@ -4,7 +4,11 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
+from main.models import TestVehicle
 
 
-def index_view(request):
-    return render_to_response('main/index.html')
+def vehicle_list(request):
+    template = 'main/index.html'
+    vehicles = TestVehicle.objects.all()
+    context = {'vehicles': vehicles}
+    return render(request, template, context)

@@ -9,7 +9,9 @@ app_name = 'main'
 
 urlpatterns = [
 
-                  url(r'^$', views.index_view, name='index'),
+                  url(r'^$', views.vehicle_list, name='vehicle_list'),
+                  #url(r'^test/$', views.test_view, name='test'),
+
 
               ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

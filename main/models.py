@@ -66,3 +66,32 @@ class Vehicle(models.Model):
     def get_absolute_url(self):
         pass
         # return reverse('shop:ProductListByCategory', args=[self.slug])
+
+
+class TestVehicle(models.Model):
+    FUEL_CHOICE = (
+        (1, 'Дизель'),
+        (2, 'Бензин'),
+        (3, 'Газ/Бензин'),
+        (4, 'Електро'),
+        (5, 'Гібрид'),
+    )
+    GEARBOX_CHOICE = (
+        (1, 'Ручна'),
+        (2, 'Автоматична'),
+    )
+    title = models.CharField(max_length=32, verbose_name='Назва автомобіля')
+    image = models.ImageField(upload_to='test_img/', verbose_name='Зображення')
+    price_usd = models.CharField(max_length=32, verbose_name='Ціна в у.о.')
+    price_uah = models.CharField(max_length=32, verbose_name='Ціна в грн.')
+    mileage = models.CharField(max_length=32, verbose_name='Пробіг')
+    city = models.CharField(max_length=32, verbose_name='Місто')
+    fuel = models.IntegerField(choices=FUEL_CHOICE, verbose_name='Тип пального')
+    gearbox = models.IntegerField(choices=GEARBOX_CHOICE, verbose_name='Тип КПП')
+    numberplate = models.CharField(max_length=8, verbose_name='Номери')
+
+    class Meta:
+        verbose_name = 'Тестова штучка'
+
+    def __str__(self):
+        return self.title

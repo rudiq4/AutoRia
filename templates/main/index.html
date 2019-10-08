@@ -5,69 +5,41 @@
 
 {% block content %}
     <section class="goods">
+        {% for vehicle in vehicles %}
     <div class="wrapper">
+
       <div class="goods__car">
         <div class="goods__car__image">
           <a href="#" class="goods__car__image__link"><img
-            src="{% static 'IMG/home/ford_c-max__296657900f.jpg' %}"
+            src="{{ vehicle.image.url }}"
             alt=""
             class="goods__car__image-image"
           />
           </a>
         </div>
         <div class="goods__car__description">
-          <a href="#" class="goods__car__description__name">Ford C-Max 2010</a>
+          <a href="#" class="goods__car__description__name">{{ vehicle.title }}</a>
           <div class="goods__car__description__price">
-            <span class="goods__car__description__price__usd">7 800 $</span>
-            <p class="goods__car__description__price__uah">196 170 грн</p>
+            <span class="goods__car__description__price__usd">{{ vehicle.price_usd }} $</span>
+            <p class="goods__car__description__price__uah">{{ vehicle.price_uah }} грн</p>
           </div>
           <div class="goods__car__description__wrapper">
           <div class="goods__car__description__character">
-               <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">137 тыс. км</p>
-            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">Дніпропердинськ</p>
-            <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">Газ/бензин</p>
+               <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">{{ vehicle.mileage }}</p>
+            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">{{ vehicle.city }}</p>
+            <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">{{ vehicle.get_fuel_display}}</p>
             <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/home/manual-transmission.png' %}" alt="">
-              Ручна/автомат
+              {{ vehicle.get_gearbox_display }}
             </p>
           </div>
           </div>
           <div class="goods__car__description__license">
-            <p class="goods__car__description__license__number">PP 1488 NN</p>
+            <p class="goods__car__description__license__number">{{ vehicle.numberplate }}</p>
           </div>
         </div>
       </div>
+
     </div>
-      <div class="wrapper">
-        <div class="goods__car">
-          <div class="goods__car__image">
-            <a href="#" class="goods__car__image__link"> <img
-              src="{% static 'IMG/home/passat.jpg' %}"
-              alt=""
-              class="goods__car__image-image"
-            />
-            </a>
-          </div>
-          <div class="goods__car__description">
-            <a href="#" class="goods__car__description__name">Volkswagen passat b5</a>
-            <div class="goods__car__description__price">
-              <span class="goods__car__description__price__usd">4000 $</span>
-              <p class="goods__car__description__price__uah">98 384 грн</p>
-            </div>
-            <div class="goods__car__description__wrapper">
-            <div class="goods__car__description__character">
-                     <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">777тыс. км</p>
-            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">Берлін</p>
-            <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">Газ/бензин</p>
-            <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/home/manual-transmission.png' %}" alt="">
-              Ручна
-            </p>
-            </div>
-            </div>
-            <div class="goods__car__description__license">
-              <p class="goods__car__description__license__number">RPZ 228 NN</p>
-            </div>
-          </div>
-        </div>
-        </div>
+    {% endfor %}
   </section>
 {% endblock %}
