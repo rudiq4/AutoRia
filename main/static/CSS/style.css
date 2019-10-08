@@ -26,7 +26,7 @@
   padding-top: 10px; }
   .header .wrapper {
     display: flex;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
     justify-content: space-between; }
   .header__inner {
@@ -113,21 +113,17 @@
     border-radius: 30px; } }
 
 .goods {
-  margin-top: 30px;
-  display: flex; }
+  margin-top: 30px; }
   .goods .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex; }
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto; }
   .goods__car {
     display: flex;
     padding-left: 15px;
     padding-bottom: 10px;
     padding-top: 20px;
-    border-bottom: 1px solid #e0e1e4;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-direction: column; }
+    border-bottom: 1px solid #e0e1e4; }
     .goods__car__image-image {
       width: 350px;
       height: 250px;
