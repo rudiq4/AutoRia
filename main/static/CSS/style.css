@@ -110,59 +110,81 @@
     border: 1px solid #e0e1e4;
     border-radius: 30px; } }
 
-.goods .wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex; }
-
-.goods__car {
-  display: flex;
-  flex-basis: 80%;
-  padding-left: 15px; }
-    .goods__car__image-image {
-       width: 300px;
-       height: 200px;
-       object-fit: cover;}
-  .goods__car__description {
-    flex-basis: 75%;
+.goods {
+  margin-top: 30px; }
+  .goods .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex; }
+  .goods__car {
+    display: flex;
     padding-left: 15px;
-    min-width: 200px; }
-    .goods__car__description__wrapper {
-      max-width: 300px; }
-    .goods__car__description__name {
-      font-family: 'Montserrat Regular';
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 20px; }
-    .goods__car__description__price {
-      display: flex;
-      align-items: center; }
-      .goods__car__description__price__usd {
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e0e1e4;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-direction: column; }
+    .goods__car__image-image {
+      width: 350px;
+      height: 250px;
+      object-fit: cover; }
+    .goods__car__description {
+      flex-basis: 75%;
+      padding-left: 15px;
+      min-width: 200px; }
+      .goods__car__description__wrapper {
+        max-width: 300px; }
+      .goods__car__description__name {
         font-family: 'Montserrat Regular';
-        font-size: 25px;
         font-weight: bold;
-        color: green;
-        margin-right: 25px; }
-      .goods__car__description__price__uah {
-        font-family: 'Montserrat Regular';
-        font-size: 14px;
-        font-weight: bold; }
-    .goods__car__description__character {
-      display: flex;
-      flex-wrap: wrap; }
-      .goods__car__description__character__basis {
+        text-decoration: none;
+        font-size: 20px; }
+      .goods__car__description__price {
         display: flex;
-        align-items: center;
-        width: 50%;
-        font-size: 14px;
-        font-family: 'Montserrat Regular';
-        margin-bottom: 10px;
-        margin-top: 10px; }
-        .goods__car__description__character__basis img {
-          padding-right: 5px;
-          width: 25px;
-          height: 25px; }
+        align-items: center; }
+        .goods__car__description__price__usd {
+          font-family: 'Montserrat Regular';
+          font-size: 25px;
+          font-weight: bold;
+          color: green;
+          margin-right: 25px; }
+        .goods__car__description__price__uah {
+          font-family: 'Montserrat Regular';
+          font-size: 14px;
+          font-weight: bold; }
+      .goods__car__description__character {
+        display: flex;
+        flex-wrap: wrap; }
+        .goods__car__description__character__basis {
+          display: flex;
+          align-items: center;
+          width: 50%;
+          font-size: 14px;
+          font-family: 'Montserrat Regular';
+          margin-bottom: 10px;
+          margin-top: 10px; }
+          .goods__car__description__character__basis img {
+            padding-right: 5px;
+            width: 25px;
+            height: 25px; }
+      .goods__car__description__license__number {
+        width: 100px;
+        text-align: center;
+        border: 2px solid #046380;
+        border-radius: 4px; }
 
-.test {
-  background-color: #3456;
-  height: 200px; }
+@media screen and (max-width: 767px) {
+  .goods .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; }
+  .goods__car {
+    display: flex;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-basis: 100%; } }
