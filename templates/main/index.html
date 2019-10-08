@@ -4,15 +4,16 @@
 {% block title %}Main page{% endblock %}
 
 {% block content %}
-      <section class="goods">
+    <section class="goods">
     <div class="wrapper">
       <div class="goods__car">
         <div class="goods__car__image">
-          <img
+          <a href="#" class="goods__car__image__link"><img
             src="{% static 'IMG/ford_c-max__296657900f.jpg' %}"
             alt=""
             class="goods__car__image-image"
           />
+          </a>
         </div>
         <div class="goods__car__description">
           <a href="#" class="goods__car__description__name">Ford C-Max 2010</a>
@@ -22,7 +23,7 @@
           </div>
           <div class="goods__car__description__wrapper">
           <div class="goods__car__description__character">
-            <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/speedometer.png' %}" alt="">137 тыс. км</p>
+               <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/speedometer.png' %}" alt="">137 тыс. км</p>
             <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/location-point.png' %}" alt="">Дніпропердинськ</p>
             <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/gasoline.png' %}" alt="">Газ/бензин</p>
             <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/manual-transmission.png' %}" alt="">
@@ -35,35 +36,38 @@
           </div>
         </div>
       </div>
-           <div class="goods__car">
-        <div class="goods__car__image">
-          <img
-            src="{% static 'IMG/passat.jpg' %}"
-            alt=""
-            class="goods__car__image-image"
-          />
-        </div>
-        <div class="goods__car__description">
-          <a href="#" class="goods__car__description__name">Volkswagen passat b5</a>
-          <div class="goods__car__description__price">
-            <span class="goods__car__description__price__usd">4000 $</span>
-            <p class="goods__car__description__price__uah">98 384 грн</p>
+    </div>
+      <div class="wrapper">
+        <div class="goods__car">
+          <div class="goods__car__image">
+            <a href="#" class="goods__car__image__link"> <img
+              src="{% static 'IMG/passat.jpg' %}"
+              alt=""
+              class="goods__car__image-image"
+            />
+            </a>
           </div>
-          <div class="goods__car__description__wrapper">
-          <div class="goods__car__description__character">
-            <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/speedometer.png' %}" alt="">777тыс. км</p>
+          <div class="goods__car__description">
+            <a href="#" class="goods__car__description__name">Volkswagen passat b5</a>
+            <div class="goods__car__description__price">
+              <span class="goods__car__description__price__usd">4000 $</span>
+              <p class="goods__car__description__price__uah">98 384 грн</p>
+            </div>
+            <div class="goods__car__description__wrapper">
+            <div class="goods__car__description__character">
+                     <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/speedometer.png' %}" alt="">777тыс. км</p>
             <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/location-point.png' %}" alt="">Берлін</p>
             <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/gasoline.png' %}" alt="">Газ/бензин</p>
             <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/manual-transmission.png' %}" alt="">
               Ручна
             </p>
-          </div>
-          </div>
-          <div class="goods__car__description__license">
-            <p class="goods__car__description__license__number">RPZ 228 NN</p>
+            </div>
+            </div>
+            <div class="goods__car__description__license">
+              <p class="goods__car__description__license__number">RPZ 228 NN</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
   </section>
 {% endblock %}
