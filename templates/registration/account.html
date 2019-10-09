@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+    Персональний кабінет
+{% endblock %}
+{% block content %}
+    <div class="container account">
+        <div class="row">
+            <div class="col-md-6 account-left">
+                <h2 class="text-center">{{ this_user }}</h2>
+                <hr>
+                <img class="img-responsive img-thumbnail" src="{{ this_user.avatar.url }}"   alt="avatar">
+            </div>
+            <div class="col-md-6 account-right">
+                <h2 class="text-center">Персональна інформація</h2>
+                <hr>
+                <ul class="account-right-list">
+                    <li>
+                        <p>Ім'я {{ this_user.first_name }}</p>
+                    </li>
+                    <li>
+                        <p>Прізвище {{ this_user.last_name }}</p>
+                    </li>
+                    <li>
+                        <p>Пошта {{ this_user.email }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
