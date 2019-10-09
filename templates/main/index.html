@@ -4,6 +4,47 @@
 {% block title %}Main page{% endblock %}
 
 {% block content %}
+      <section class="form__section">
+      <div class="wrapper">
+        <form action="" class="form">
+          <div class="form__wrapper">
+            <div class="form__car">
+              <select class="form__car__type">
+                <option>Хуяк</option>
+              </select>
+              <select class="form__car__mark">
+                <option>Хуяк</option>
+              </select>
+              <select class="form__car__model">
+                <option>Хуяк</option>
+              </select>
+            </div>
+            <div class="form__info">
+              <div class="form__info__region form__info__flex">
+                <p>Регіон</p>
+                <select class="form__info__region__select">
+                  <option>Хуяк</option>
+                </select>
+              </div>
+              <div class="form__info__year form__info__flex">
+                <p>Рік</p>
+                <select class="form__info__year__start">
+                  <option>санчез</option>
+                </select>
+                <select class="form__info__year__end">
+                  <option>С137</option>
+                </select>
+              </div>
+              <div class="form__info__price form__info__flex">
+                <p>Ціна</p>
+                <input type="number" class="form__info__price__start" />
+                <input type="number" class="form__info__price__end" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
     <section class="goods">
         {% for vehicle in vehicles %}
     <div class="wrapper">

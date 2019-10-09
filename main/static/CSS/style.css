@@ -19,6 +19,9 @@
   font-weight: 300;
   font-style: normal; }
 
+
+/*HEADER =========================================================================>*/
+
 .header__responsive {
   display: none; }
 
@@ -111,6 +114,111 @@
     margin-right: 20px;
     border: 1px solid #e0e1e4;
     border-radius: 30px; } }
+
+/*FORM =========================================================================>*/
+
+.form__section .wrapper {
+  border-radius: 5px;
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto; }
+
+.form {
+  margin-top: 30px; }
+  .form__wrapper {
+    display: flex;
+    width: 550px;
+    background-color: #db5c4c;
+    border-radius: 5px;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px; }
+  .form__car {
+    display: flex;
+    flex-direction: column; }
+    .form__car select {
+      width: 200px;
+      height: 30px;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      margin-right: 25px;
+      border-radius: 5px; }
+  .form__info__flex {
+    display: flex;
+    align-items: center; }
+  .form__info p {
+    width: 70px;
+    font-family: 'OpenSans';
+    font-size: 25px;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  .form__info__region__select {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px; }
+  .form__info__year__start, .form__info__year__end {
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 20px; }
+  .form__info__price__end, .form__info__price__start {
+    width: 90px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 20px;
+    border: none; }
+
+@media screen and (max-width: 767px) {
+  .form__section .wrapper {
+    display: block;
+    min-width: 370px; }
+  .form {
+    margin: 0 auto;
+    margin-top: 30px; }
+    .form__wrapper {
+      display: flex;
+      background-color: #db5c4c;
+      border-radius: 5px;
+      justify-content: center;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      flex-direction: column;
+      width: 100%; }
+    .form__car select {
+      width: auto;
+      height: 40px;
+      margin: 10px;
+      border-radius: 5px; }
+    .form__info__flex {
+      display: flex;
+      flex-wrap: wrap; }
+      .form__info__flex p {
+        margin-top: 10px;
+        margin-bottom: 10px; }
+    .form__info__region {
+      flex-direction: column;
+      width: 100%; }
+      .form__info__region p {
+        width: 95%; }
+      .form__info__region select {
+        width: 96%;
+        height: 40px; }
+    .form__info__year, .form__info__price {
+      justify-content: space-between;
+      margin-left: 17px; }
+      .form__info__year p, .form__info__price p {
+        width: 95%; }
+      .form__info__year select,
+      .form__info__year input, .form__info__price select,
+      .form__info__price input {
+        width: 44%;
+        height: 40px; } }
+
+
+/*GOODS =========================================================================>*/
+
+
 
 .goods {
   margin-top: 30px; }
