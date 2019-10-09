@@ -185,6 +185,8 @@
       display: flex;
       flex-basis: 100%;
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
       padding-left: 10px; }
       .goods__car__image-image {
         width: 345px;
