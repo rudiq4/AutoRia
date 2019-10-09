@@ -1,30 +1,12 @@
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="shortcut icon" href="{% static 'IMG/home/rick&morti.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'CSS/carpage.css' %}"/>
-
-</head>
-<body>
-
-
+{% block title %}Детальна інформація про машину{% endblock %}
+{% block content %}
 <div class="wrapper">
-    <section id="header">
-        {% include 'base/header.html' %}
-    </section>
-    <section id="content" class="container-fluid">
-        {% block content %}{% endblock %}
-    </section>
 <section class="auto">
       <div class="auto__title">
         <h1 class="auto__title__name">Ford C-Max 2010</h1>
       </div>
-
       <div class="wrapper">
         <div class="auto__info__wrapper">
           <div class="auto__info__fixed">
@@ -112,19 +94,4 @@
       </div>
     </section>
 </div>
-
-{% include 'base/footer.html' %}
-
-{# Тут також підключається всяка гравіцапа #}
-
-<script src="{% static 'JS/main.js' %}"></script>
-
-<script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"
-></script>
-
-
-</body>
-</html>
+{% endblock %}
