@@ -12,3 +12,8 @@ def vehicle_list(request):
     vehicles = TestVehicle.objects.all()
     context = {'vehicles': vehicles}
     return render(request, template, context)
+
+
+def carpage(request):
+    template = 'main/carpage.html'
+    return render(request, template)
