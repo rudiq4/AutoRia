@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.login_btn').magnificPopup({
+    $('.popup-with-form').magnificPopup({
         type: 'inline',
         preloader: false,
         focus: '#name',
@@ -23,3 +23,34 @@ $(document).ready(function () {
         }
     });
 });
+
+let inputs = document.querySelectorAll('.registration__form__input');
+let registration_form = document.querySelector('.registration__form');
+let pass = document.querySelector('#pass');
+let repass = document.querySelector('#repass');
+
+
+
+registration_form.onsubmit = function (e) {
+    let error = false;
+    for (var i = 0; i <= inputs.length; i++) {
+        if (inputs[i].value == "") {
+            inputs[i].classList.add("form__error");
+            inputs[i].classList.remove("registration__form__input__border");
+        }
+        e.preventDefault();
+        if (pass.value != repass.value) {
+            e.preventDefault();
+        }
+    }
+}
+
+
+for (var i = 0; i <= inputs.length; i++) {
+    inputs[i].oninput = function () {
+        if (this.classList.contains("form__error")) {
+            this.classList.remove("form__error");
+            this.classList.add("registration__form__input__border");
+        }
+    }
+};

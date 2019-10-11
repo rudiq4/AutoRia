@@ -168,6 +168,21 @@
     border-radius: 5px;
     margin-right: 20px;
     border: none; }
+    .form__info__button {
+    text-align: right;
+    margin-right: 20px; }
+    .form__info__button__search {
+      font-family: 'Montserrat Regular';
+      width: 130px;
+      font-size: 17px;
+      font-weight: bold;
+      height: 35px;
+      margin: 10px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 5px;
+      color: #046380;
+      background: #fff; }
 
 @media screen and (max-width: 767px) {
   .form__section .wrapper {
@@ -210,11 +225,12 @@
       .form__info__year input, .form__info__price select,
       .form__info__price input {
         width: 44%;
-        height: 40px; } }
-
-
-
-
+        height: 40px; }
+    .form__info__button {
+    text-align: center; }
+    .form__info__button__search {
+      width: 44%;
+      height: 40px;}  }
 
 .goods {
   margin-top: 30px; }
@@ -928,4 +944,54 @@ screen and (max-height: 300px) {
 @media screen and (max-width: 767px) {
   .login__form {
     max-width: 90%;
+    height: 400px; } }
+
+
+.login__form {
+  width: 700px;
+  background: #fff;
+  margin: 0 auto;
+  height: 400px;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  border: 3px solid #046380; }
+  .login__form .wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border: 0; }
+  .login__form__info {
+    text-align: center; }
+    .login__form__info h1 {
+      font-family: 'Montserrat Regular';
+      font-size: 33px;
+      color: #046380; }
+    .login__form__info p {
+      font-family: 'Montserrat Regular'; }
+  .login__form__inputs {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto; }
+    .login__form__inputs input {
+      height: 30px;
+      margin: 10px; }
+  .login__form__button {
+    font-family: 'Montserrat Regular';
+    font-weight: bold;
+    width: 130px;
+    height: 35px;
+    margin: 10px;
+    border: 2px solid #046380;
+    color: #046380;
+    background: #fff; }
+
+.mfp-close {
+  display: none !important; }
+
+@media screen and (max-width: 767px) {
+  .login__form {
+    max-width: 500px;
+    margin: 20px;
     height: 400px; } }
