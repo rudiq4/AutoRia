@@ -15,5 +15,7 @@ class UserAccount(models.Model):
     def __str__(self):
         return self.user.username
 
+
+
     def get_absolute_url(self):
         return reverse('customer:account', kwargs={'user': self.user.username})
