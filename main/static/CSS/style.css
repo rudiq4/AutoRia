@@ -995,3 +995,50 @@ screen and (max-height: 300px) {
     max-width: 500px;
     margin: 20px;
     height: 400px; } }
+
+
+.registration {
+  padding-top: 30px; }
+  .registration .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center; }
+    .registration .wrapper h1 {
+      font-family: 'Montserrat Regular';
+      font-size: 33px;
+      color: #046380; }
+  .registration__form {
+    margin: 0 auto; }
+    .registration__form__inputs {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      margin: 0 auto; }
+      .registration__form__inputs input {
+        height: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        .registration__form__inputs input:active, .registration__form__inputs input:hover, .registration__form__inputs input:focus {
+          outline: 0;
+          outline-offset: 0; }
+    .registration__form__button {
+      font-family: 'Montserrat Regular';
+      font-weight: bold;
+      height: 35px;
+      margin: 10px;
+      margin-top: 25px;
+      border: 2px solid #046380;
+      color: #046380;
+      background: #fff; }
+
+@media screen and (max-width: 767px) {
+  .registration .wrapper {
+    min-width: 370px; } }
+
+.form__error {
+  border: none;
+  border-bottom: 1px solid red; }
+
+.registration__form__input__border {
+  border: none;
+  border-bottom: 1px solid #046380; }
