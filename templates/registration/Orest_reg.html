@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+    Реєстрація
+{% endblock %}
+{% block content %}
+
+    <section class="registration">
+      <div class="wrapper">
+        <h1>Реєстрація</h1>
+        <form action="POST" class="registration__form">
+          <div class="registration__form__inputs">
+            <input
+              class="registration__form__input registration__form__input__border"
+              type="text"
+              placeholder="Ім'я"
+            />
+            <input
+              class="registration__form__input registration__form__input__border"
+              type="text"
+              placeholder="Email"
+            />
+            <input
+              id="pass"
+              class="registration__form__input registration__form__input__border"
+              type="password"
+              placeholder="Пароль"
+            />
+            <input
+              id="repass"
+              class="registration__form__input registration__form__input__border"
+              type="password"
+              placeholder="Продублюйте пароль"
+            />
+          </div>
+          <button class="registration__form__button">Зареєструватись</button>
+        </form>
+      </div>
+    </section>
+{% endblock %}
