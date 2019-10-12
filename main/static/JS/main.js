@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.popup-with-form').magnificPopup({
+    $('.login_btn').magnificPopup({
         type: 'inline',
         preloader: false,
         focus: '#name',
