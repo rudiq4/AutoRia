@@ -24,8 +24,10 @@ class LoginForm(forms.Form):
 
 
 class RegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    password_check = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": "registration__form__input registration__form__input__border"}))
+    password_check = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": "registration__form__input registration__form__input__border"}))
 
     class Meta:
         model = User
@@ -33,7 +35,8 @@ class RegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
-        self.fields['username'].help_text = '*Допускаєься: 150 або менше символів. тільки букви, цифри та знаки'
+        # self.fields['username'].help_text = '*Допускаєься: 150 або менше символів. тільки букви, цифри та знаки'
+        self.fields['username'].help_text = ''
         self.fields['password'].label = 'Пароль'
         self.fields['password_check'].label = 'Повторіть пароль'
 

@@ -6,7 +6,6 @@ from django.urls import reverse
 class UserAccount(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Користувач")
     email = models.EmailField(verbose_name='e-mail')
-    avatar = models.ImageField(upload_to='user_photo/', verbose_name='Фото профілю')
 
     class Meta:
         verbose_name = 'Користувач'
@@ -14,8 +13,6 @@ class UserAccount(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
 
     def get_absolute_url(self):
         return reverse('customer:account', kwargs={'user': self.user.username})
