@@ -9,7 +9,7 @@ User = get_user_model()
 
 
 class RegistrationView(View):
-    template = 'registration/Orest_reg.html'
+    template = 'registration/registration.html'
 
     def get(self, request, *args, **kwargs):
         form = RegistrationForm(request.POST or None)

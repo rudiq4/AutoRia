@@ -4,16 +4,18 @@
     Реєстрація
 {% endblock %}
 {% block content %}
-    <div class="col-md-8 col-md-offset-2">
-        <div class="aa-myaccount-register">
-            <h4 class="text-center">Реєстрація</h4>
-            <form action="" method="POST" class="aa-login-form">
-                {{ form.error }}
-                <hr>
-                {% csrf_token %}
-                {{ form.as_ul }}
-                <button type="submit" class="aa-browse-btn">Зареєструватись</button>
+
+    <section class="registration">
+        <div class="wrapper">
+            <h1>Реєстрація</h1>
+            <form action="" method="POST" class="registration__form">
+                <div class="registration__form__inputs">
+                    {{ form.error }}
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" class="registration__form__button">Зареєструватись</button>
+                </div>
             </form>
         </div>
-    </div>
+    </section>
 {% endblock %}

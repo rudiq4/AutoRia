@@ -4,16 +4,17 @@
     Авторизація
 {% endblock %}
 {% block content %}
-    <div class="col-md-8 col-md-offset-2 custom-login-form">
-        <div class="aa-myaccount-login">
-            <h4 class="text-center">Авторизація користувача</h4>
-            <form action="" method="POST" class="aa-login-form">
-                {{ form.error }}
-                <hr>
-                {% csrf_token %}
-                {{ form.as_ul }}
-                <button type="submit" class="aa-browse-btn">Увійти</button>
+    <section class="registration">
+        <div class="wrapper">
+            <h1>Вхід</h1>
+            <form action="" method="POST" class="registration__form">
+                <div class="registration__form__inputs">
+                    {{ form.error }}
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" class="registration__form__button">Увійти</button>
+                </div>
             </form>
         </div>
-    </div>
+    </section>
 {% endblock %}
