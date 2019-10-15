@@ -3,55 +3,60 @@ from smart_selects.db_fields import ChainedForeignKey
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=32, verbose_name='Категорія', db_index=True)
-    slug = models.SlugField(max_length=32, db_index=True, unique=True)
+    title = models.CharField(max_length=32, verbose_name='Категорія')
+    slug = models.SlugField(max_length=32)
+
+    def __str__(self):
+        return "%s" % self.title
+
+    def get_absolute_url(self):
+        pass
+        # return reverse('shop:ProductListByCategory', args=[self.slug])
 
     class Meta:
         verbose_name = 'Категорія'
         verbose_name_plural = 'Категорії'
 
-    def __str__(self):
-        return self.title
-
-    def get_absolute_url(self):
-        pass
-        # return reverse('shop:ProductListByCategory', args=[self.slug])
-
 
 class Brand(models.Model):
-    category = models.ForeignKey(Category, verbose_name='Категорія', on_delete=models.CASCADE)
-    title = models.CharField(max_length=32, verbose_name='Виробник', db_index=True)
-    slug = models.SlugField(max_length=32, db_index=True, unique=True)
-
-    class Meta:
-        verbose_name = 'Марка'
-        verbose_name_plural = 'Марка'
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    title = models.CharField(max_length=32, verbose_name='Марка автомобіля')
+    slug = models.SlugField(max_length=32)
 
     def __str__(self):
-        return self.title
+        return "%s" % self.title
 
     def get_absolute_url(self):
         pass
         # return reverse('shop:ProductListByCategory', args=[self.slug])
 
-
-class VehicleType(models.Model):
-    category = models.ForeignKey(Category, verbose_name='Категорія', default=None, on_delete=models.CASCADE)
-    brand = ChainedForeignKey(Brand, chained_field=category, chained_model_field=category, show_all=False,
-                              auto_choose=True, sort=True)
-    title = models.CharField(max_length=32, verbose_name='Модель', db_index=True)
-    slug = models.SlugField(max_length=32, db_index=True, unique=True)
-
     class Meta:
-        verbose_name = 'Модель'
-        verbose_name_plural = 'Моделі'
+        verbose_name = 'Марка автомобіля'
+        verbose_name_plural = 'Автомобільні марки'
+
+
+class Type(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    brand = ChainedForeignKey(
+        'Brand',
+        chained_field="category",
+        chained_model_field="category",
+        show_all=False,
+        auto_choose=True
+    )
+    title = models.CharField(max_length=32, verbose_name='Модель автомобіля')
+    slug = models.SlugField(max_length=32)
 
     def __str__(self):
-        return self.title
+        return "%s" % self.title
 
     def get_absolute_url(self):
         pass
         # return reverse('shop:ProductListByCategory', args=[self.slug])
+
+    class Meta:
+        verbose_name = 'Модель автомобіля'
+        verbose_name_plural = 'Моделі автомобілів'
 
 
 class TestVehicle(models.Model):
@@ -81,3 +86,8 @@ class TestVehicle(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class VehicleInstance(models.Model):
+    pass
+#  Тут буде конкретний екземпляр моделі
