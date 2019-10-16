@@ -29,8 +29,12 @@ $(".account__menu__description__responsive__bar").click(function () {
 
     if ($(".arrow").hasClass("down")) {
         $(".arrow").removeClass("down").addClass("up");
+        $('.arrow').prepend('<img src="img/account/arrow.png" alt="" class="up" />');
+        $('.down').remove();
     } else if ($(".arrow").hasClass("up")) {
         $(".arrow").removeClass("up").addClass("down");
+        $('.arrow').prepend('<img src="img/account/arrow.png" alt="" class="down" />')
+        $('.up').remove();
     }
 });
 

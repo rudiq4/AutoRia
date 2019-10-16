@@ -1092,20 +1092,6 @@ screen and (max-height: 300px) {
 .account__menu__description__responsive__bar {
   display: none;
   position: relative; }
-  .account__menu__description__responsive__bar .down::before {
-    position: absolute;
-    content: ">";
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    transform: rotate(90deg); }
-  .account__menu__description__responsive__bar .up::after {
-    position: absolute;
-    content: ">";
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    transform: rotate(-90deg); }
 
 @media screen and (max-width: 767px) {
   .account {
@@ -1115,24 +1101,12 @@ screen and (max-height: 300px) {
       .account__menu__nav__list {
         display: none; }
   .account__menu__description__responsive__bar {
-    display: block;
-    position: relative;
-    margin-left: auto; }
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
     .account__menu__description__responsive__bar .down {
-      margin-right: 50px; }
-      .account__menu__description__responsive__bar .down::before {
-        position: absolute;
-        content: ">";
-        font-size: 20px;
-        font-weight: bold;
-        display: inline-block;
-        transform: rotate(90deg); }
+      transform: rotate(90deg); }
     .account__menu__description__responsive__bar .up {
-      margin-right: 50px; }
-      .account__menu__description__responsive__bar .up::before {
-        position: absolute;
-        content: ">";
-        font-size: 20px;
-        font-weight: bold;
-        display: inline-block;
-        transform: rotate(-90deg); } }
+      transform: rotate(-90deg); } }
+
