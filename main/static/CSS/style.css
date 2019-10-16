@@ -1042,3 +1042,97 @@ screen and (max-height: 300px) {
 .registration__form__input__border {
   border: none;
   border-bottom: 1px solid #046380; }
+
+
+.account {
+  margin-top: 40px; }
+  .account .wrapper {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto; }
+  .account__menu {
+    min-width: 300px; }
+    .account__menu__description {
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e1e4; }
+      .account__menu__description__image {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        margin-right: 15px; }
+      .account__menu__description span {
+        font-size: 15px; }
+      .account__menu__description__name, .account__menu__description__email, .account__menu__description__number {
+        font-family: 'Montserrat Regular';
+        font-size: 13px;
+        margin: 10px;
+        font-weight: bold; }
+    .account__menu__nav a {
+      text-decoration: none; }
+    .account__menu__nav__list {
+      padding: 0;
+      margin: 0; }
+      .account__menu__nav__list__item {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #e0e1e4; }
+        .account__menu__nav__list__item img {
+          margin-left: 5px;
+          margin-right: 15px; }
+        .account__menu__nav__list__item span {
+          font-family: 'Montserrat Regular';
+          font-size: 15px;
+          font-weight: bold;
+          color: #000; }
+
+.account__menu__description__responsive__bar {
+  display: none;
+  position: relative; }
+  .account__menu__description__responsive__bar .down::before {
+    position: absolute;
+    content: ">";
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(90deg); }
+  .account__menu__description__responsive__bar .up::after {
+    position: absolute;
+    content: ">";
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(-90deg); }
+
+@media screen and (max-width: 767px) {
+  .account {
+    min-width: 370px; }
+    .account__menu {
+      width: 100%; }
+      .account__menu__nav__list {
+        display: none; }
+  .account__menu__description__responsive__bar {
+    display: block;
+    position: relative;
+    margin-left: auto; }
+    .account__menu__description__responsive__bar .down {
+      margin-right: 50px; }
+      .account__menu__description__responsive__bar .down::before {
+        position: absolute;
+        content: ">";
+        font-size: 20px;
+        font-weight: bold;
+        display: inline-block;
+        transform: rotate(90deg); }
+    .account__menu__description__responsive__bar .up {
+      margin-right: 50px; }
+      .account__menu__description__responsive__bar .up::before {
+        position: absolute;
+        content: ">";
+        font-size: 20px;
+        font-weight: bold;
+        display: inline-block;
+        transform: rotate(-90deg); } }

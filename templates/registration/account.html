@@ -4,28 +4,62 @@
     Персональний кабінет
 {% endblock %}
 {% block content %}
-    <div class="container account">
-        <div class="row">
-            <div class="col-md-6 account-left">
-                <h2 class="text-center">{{ this_user }}</h2>
-                <hr>
-                <img class="img-responsive img-thumbnail" src="{{ this_user.avatar.url }}"   alt="avatar">
+
+    <section class="account">
+      <div class="wrapper">
+        <div class="account__menu">
+          <div class="account__menu__description">
+            <img
+              src="{{ this_user.avatar.url }}"
+              alt="avatar"
+              class="account__menu__description__image"
+            />
+            <div class="account__menu__description__text">
+              <p class="account__menu__description__name">
+                 <span>{{ this_user.first_name }} </span><span>{{ this_user.last_name }}</span>
+              </p>
+              <p class="account__menu__description__email">
+               {{ this_user.email }}
+              </p>
+              <p class="account__menu__description__number">
+                {{ user.phone }}
+              </p>
             </div>
-            <div class="col-md-6 account-right">
-                <h2 class="text-center">Персональна інформація</h2>
-                <hr>
-                <ul class="account-right-list">
-                    <li>
-                        <p>Ім'я {{ this_user.first_name }}</p>
-                    </li>
-                    <li>
-                        <p>Прізвище {{ this_user.last_name }}</p>
-                    </li>
-                    <li>
-                        <p>Пошта {{ this_user.email }}</p>
-                    </li>
-                </ul>
+
+            <div class="account__menu__description__responsive__bar">
+              <span class="arrow down"></span>
             </div>
+          </div>
+          <div class="account__menu__nav">
+            <ul class="account__menu__nav__list">
+              <a href="#">
+                <li class="account__menu__nav__list__item">
+                  <img src="{% static 'IMG/account/avatar.png' %}" alt="" />
+                  <span>Особистий кабінет</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="account__menu__nav__list__item">
+                  <img src="{% static 'IMG/account/script.png' %}" alt="" />
+                  <span>Мої оголошення</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="account__menu__nav__list__item">
+                  <img src="{% static 'IMG/account/cucumber.png' %}" alt="" />
+                  <span>АГУРЧІК РІК</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="account__menu__nav__list__item">
+                  <img src="{% static 'IMG/account/script.png' %}" alt="" />
+                  <span>Налаштування</span>
+                </li>
+              </a>
+            </ul>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+
 {% endblock %}

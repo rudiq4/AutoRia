@@ -23,3 +23,19 @@ $(document).ready(function () {
         }
     });
 });
+
+$(".account__menu__description__responsive__bar").click(function () {
+    $(".account__menu__nav__list").fadeToggle(500);
+
+    if ($(".arrow").hasClass("down")) {
+        $(".arrow").removeClass("down").addClass("up");
+    } else if ($(".arrow").hasClass("up")) {
+        $(".arrow").removeClass("up").addClass("down");
+    }
+});
+
+
+$("#id_username").addClass("registration__form__input registration__form__input__border");
+$("#id_password").addClass("registration__form__input registration__form__input__border");
+$("#id_password__check").addClass("registration__form__input registration__form__input__border");
+$("#id_email").addClass("registration__form__input registration__form__input__border");
