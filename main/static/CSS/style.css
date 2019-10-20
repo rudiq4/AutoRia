@@ -71,7 +71,7 @@
       text-decoration: none;
       padding-right: 15px;}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .header-large {
     display: none; }
   .header__responsive {
@@ -184,7 +184,7 @@
       color: #046380;
       background: #fff; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .form__section .wrapper {
     display: block;
     min-width: 370px; }
@@ -258,7 +258,9 @@
         font-family: 'Montserrat Regular';
         font-weight: bold;
         text-decoration: none;
-        font-size: 20px; }
+        font-size: 20px;
+        color: #000;
+      }
       .goods__car__description__price {
         display: flex;
         align-items: center; }
@@ -293,7 +295,7 @@
         border: 2px solid #046380;
         border-radius: 4px; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .goods {
     flex-direction: column; }
     .goods .wrapper {
@@ -405,7 +407,7 @@
     padding-left: 25px;
     font-weight: bold; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .auto__title {
     min-width: 370px; }
     .auto__title__name {
@@ -941,7 +943,7 @@ screen and (max-height: 300px) {
 .mfp-close {
   display: none !important; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .login__form {
     max-width: 90%;
     height: 400px; } }
@@ -990,7 +992,7 @@ screen and (max-height: 300px) {
 .mfp-close {
   display: none !important; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .login__form {
     max-width: 500px;
     margin: 20px;
@@ -1031,7 +1033,7 @@ screen and (max-height: 300px) {
       color: #046380;
       background: #fff; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .registration .wrapper {
     min-width: 370px; } }
 
@@ -1093,7 +1095,7 @@ screen and (max-height: 300px) {
   display: none;
   position: relative; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .account {
     min-width: 370px; }
     .account__menu {
