@@ -9,8 +9,10 @@ from main.models import TestVehicle
 
 def vehicle_list(request):
     template = 'main/index.html'
+    ip = request.META.get('REMOTE_ADDR')  # just 4 test
+    browser = request.META.get('HTTP_USER_AGENT')  # just 4 test
     vehicles = TestVehicle.objects.all()
-    context = {'vehicles': vehicles}
+    context = {'vehicles': vehicles, 'ip': ip, 'browser': browser}
     return render(request, template, context)
 
 

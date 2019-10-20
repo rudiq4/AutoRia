@@ -1,9 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=32, verbose_name='Категорія')
+    title = models.CharField('Категорія', max_length=32)
     slug = models.SlugField(max_length=32)
 
     def __str__(self):
@@ -20,7 +21,7 @@ class Category(models.Model):
 
 class Brand(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    title = models.CharField(max_length=32, verbose_name='Марка автомобіля')
+    title = models.CharField('Марка автомобіля', max_length=32)
     slug = models.SlugField(max_length=32)
 
     def __str__(self):
@@ -44,7 +45,7 @@ class Type(models.Model):
         show_all=False,
         auto_choose=True
     )
-    title = models.CharField(max_length=32, verbose_name='Модель автомобіля')
+    title = models.CharField('Модель автомобіля', max_length=32)
     slug = models.SlugField(max_length=32)
 
     def __str__(self):
@@ -71,23 +72,53 @@ class TestVehicle(models.Model):
         (1, 'Ручна'),
         (2, 'Автоматична'),
     )
-    title = models.CharField(max_length=32, verbose_name='Назва автомобіля')
-    image = models.ImageField(upload_to='test_img/', verbose_name='Зображення')
-    price_usd = models.CharField(max_length=32, verbose_name='Ціна в у.о.')
-    price_uah = models.CharField(max_length=32, verbose_name='Ціна в грн.')
-    mileage = models.CharField(max_length=32, verbose_name='Пробіг')
-    city = models.CharField(max_length=32, verbose_name='Місто')
-    fuel = models.IntegerField(choices=FUEL_CHOICE, verbose_name='Тип пального')
-    gearbox = models.IntegerField(choices=GEARBOX_CHOICE, verbose_name='Тип КПП')
-    numberplate = models.CharField(max_length=8, verbose_name='Номери')
+    title = models.CharField('Назва автомобіля', max_length=32)  # without verbose_name
+    image = models.ImageField('Зображення', upload_to='test_img/')
+    price_usd = models.CharField('Ціна в у.о.', max_length=32)
+    price_uah = models.CharField('Ціна в грн.', max_length=32)
+    mileage = models.CharField('Пробіг', max_length=32)
+    city = models.CharField('Місто', max_length=32)
+    fuel = models.IntegerField('Тип пального', choices=FUEL_CHOICE)
+    gearbox = models.IntegerField('Тип КПП', choices=GEARBOX_CHOICE)
+    numberplate = models.CharField('Номери', max_length=8)
 
     class Meta:
-        verbose_name = 'Тестова штучка'
+        verbose_name = 'Just for test'
 
     def __str__(self):
         return self.title
 
 
 class VehicleInstance(models.Model):
-    pass
-#  Тут буде конкретний екземпляр моделі
+    FUEL_CHOICE = (
+        (1, 'Дизель'),
+        (2, 'Бензин'),
+        (3, 'Газ/Бензин'),
+        (4, 'Електро'),
+        (5, 'Гібрид'),
+    )
+    GEARBOX_CHOICE = (
+        (1, 'Ручна'),
+        (2, 'Автоматична'),
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Користувач")
+    is_active = models.BooleanField('Актив/Неактив', default=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    image = models.ImageField('Зображення', upload_to='test_img/')
+    price_usd = models.CharField('Ціна в у.о.', max_length=32)
+    price_uah = models.CharField('Ціна в грн.', max_length=32)
+    mileage = models.CharField('Пробіг', max_length=32)
+    city = models.CharField('Місто', max_length=32)
+    fuel = models.IntegerField('Тип пального', choices=FUEL_CHOICE)
+    gearbox = models.IntegerField('Тип КПП', choices=GEARBOX_CHOICE)
+    numberplate = models.CharField('Номери', max_length=8)
+    created = models.DateTimeField('Створено', auto_now_add=True)
+    updated = models.DateTimeField('Оновлено', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Оголошення'
+
+    def __str__(self):
+        return str(self.id)
