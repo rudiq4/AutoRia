@@ -11,6 +11,10 @@ urlpatterns = [
 
                   url(r'^$', views.vehicle_list, name='vehicle_list'),
                   url(r'^carpage/$', views.carpage, name='carpage'),
+                  # url(r'^search-form/$', views.search_form),
+                  url(r'^search/$', views.search),
+
+
 
                   #url(r'^test/$', views.test_view, name='test'),
 

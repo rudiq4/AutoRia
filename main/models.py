@@ -12,7 +12,6 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         pass
-        # return reverse('shop:ProductListByCategory', args=[self.slug])
 
     class Meta:
         verbose_name = 'Категорія'
@@ -29,7 +28,6 @@ class Brand(models.Model):
 
     def get_absolute_url(self):
         pass
-        # return reverse('shop:ProductListByCategory', args=[self.slug])
 
     class Meta:
         verbose_name = 'Марка автомобіля'
@@ -53,7 +51,6 @@ class Type(models.Model):
 
     def get_absolute_url(self):
         pass
-        # return reverse('shop:ProductListByCategory', args=[self.slug])
 
     class Meta:
         verbose_name = 'Модель автомобіля'
@@ -72,7 +69,7 @@ class TestVehicle(models.Model):
         (1, 'Ручна'),
         (2, 'Автоматична'),
     )
-    title = models.CharField('Назва автомобіля', max_length=32)  # without verbose_name
+    title = models.CharField('Назва автомобіля', max_length=32)
     image = models.ImageField('Зображення', upload_to='test_img/')
     price_usd = models.CharField('Ціна в у.о.', max_length=32)
     price_uah = models.CharField('Ціна в грн.', max_length=32)

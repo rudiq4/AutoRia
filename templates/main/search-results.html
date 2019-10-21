@@ -1,0 +1,12 @@
+<P>Ви шукали : <strong>{{ query }}</strong></P>
+
+{% if posts %}
+    <p>Знайдено {{ posts|length }} автомобілів </p>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Нажаль, автомобілі які відповідаюь вашом запиту - не знайдені</p>
+{% endif %}

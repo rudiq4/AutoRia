@@ -19,3 +19,22 @@ def vehicle_list(request):
 def carpage(request):
     template = 'main/carpage.html'
     return render(request, template)
+
+
+# def search_form(request):
+#     return render_to_response('main/search.html')
+
+
+def search(request):
+    errors = []
+    if 'q' in request.GET:
+        q = request.GET['q']
+        if not q:
+            errors.append('Введіть пошуковий запит')
+        elif len(q) > 20:
+            errors.append('Введіть не більше 20 символів')
+        else:
+            posts = TestVehicle.objects.filter(title__icontains=q)
+            return render_to_response('main/search-results.html',
+                                      {'posts': posts, 'query': q})
+    return render_to_response('main/search.html', {'errors': errors})
