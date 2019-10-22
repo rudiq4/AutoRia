@@ -1035,7 +1035,11 @@ screen and (max-height: 300px) {
 
 @media screen and (max-width: 768px) {
   .registration .wrapper {
-    min-width: 370px; } }
+    min-width: 370px; }
+.pagg .wrapper{
+    min-width: 370px;
+}
+}
 
 .form__error {
   border: none;
@@ -1112,3 +1116,60 @@ screen and (max-height: 300px) {
     .account__menu__description__responsive__bar .up {
       transform: rotate(-90deg); } }
 
+.pagg{
+  margin-top: 40px;
+}
+.pagg .wrapper{
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.pagination li{
+  color: #000;
+  width: 25px;
+  height: 25px;
+  font-family: 'Montserrat Regular';
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination li a{
+  text-decoration: none;
+}
+
+.active {
+  background: #046380;
+  color: white !important;
+  width: 25px;
+  height: 25px;
+  font-family: 'Montserrat Regular';
+  font-size: 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagg__prev{
+  transform: rotate(180deg);
+  width: 10px;
+  height: 10px;
+}
+.pagg__next{
+  width: 10px;
+  height: 10px;
+}
+
+.pagination li a:visited{
+    color: #000;
+   }

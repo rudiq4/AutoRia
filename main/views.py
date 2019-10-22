@@ -22,7 +22,7 @@ def index(request):
     browser = request.META.get('HTTP_USER_AGENT')  # just 4 test
     posts = VehicleInstance.objects.filter(is_active=True)
     page = request.GET.get('page')
-    paginator = Paginator(posts, 9)
+    paginator = Paginator(posts, 2)
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
