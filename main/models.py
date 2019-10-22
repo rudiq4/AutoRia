@@ -103,9 +103,10 @@ class VehicleInstance(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    title = models.CharField('Назва', max_length=64, blank=True)
     image = models.ImageField('Зображення', upload_to='test_img/')
     price_usd = models.CharField('Ціна в у.о.', max_length=32)
-    price_uah = models.CharField('Ціна в грн.', max_length=32)
+    price_uah = models.CharField('Ціна в грн.', max_length=32, blank=True)
     mileage = models.CharField('Пробіг', max_length=32)
     city = models.CharField('Місто', max_length=32)
     fuel = models.IntegerField('Тип пального', choices=FUEL_CHOICE)
@@ -116,6 +117,15 @@ class VehicleInstance(models.Model):
 
     class Meta:
         verbose_name = 'Оголошення'
+        ordering = ['-created']
 
     def __str__(self):
         return str(self.id)
+
+    def save(self, *args, **kwargs):
+        self.title = "{} {}".format(self.brand, self.type)
+        print(self.title)
+        self.price_uah = int(self.price_usd)*25
+
+        super(VehicleInstance, self).save(*args, **kwargs)
+

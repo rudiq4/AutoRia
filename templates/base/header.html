@@ -3,21 +3,21 @@
     <div class="wrapper">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="{% url "main:vehicle_list" %}" class="header__logo__link"
+                <a href="{% url "main:index" %}" class="header__logo__link"
                 ><img src="{% static 'IMG/home/Logo.png' %}" alt="" class="header__logo__image"
                 /></a>
             </div>
             <div class="header__main">
                 <ul class="header__main__list">
                     <li class="header__main__list__item">
-                        <a href="#" class="header__main__list__item__link">Автомобілі</a>
+                        <a href="/admin/" class="header__main__list__item__link">Адмінка</a>
                     </li>
                     <li class="header__main__list__item">
-                        <a href="#" class="header__main__list__item__link">Автотовари</a>
+                        <a href="#" class="header__main__list__item__link">Жуйка</a>
                     </li>
                     <li class="header__main__list__item">
                         <a href="#" class="header__main__list__item__link"
-                        >Автозапчастини</a
+                        >Калькулон</a
                         >
                     </li>
                 </ul>
@@ -30,7 +30,6 @@
                 <a href="{% url "user:logout" %}" class="header__registration__login">Вихід</a>
             {% else %}
                 <a href="{% url "user:login" %}" class="header__registration__login">Вхід</a>
-                <a class="login_btn" href="#login-form">Хоба вспливашка</a>
                 <a href="{% url "user:registration" %}" class="header__registration__login">Реєстрація</a>
             {% endif %}
         </div>
@@ -82,16 +81,18 @@
     </div>
 </header>
 
-<form id="login-form" class=" login__form mfp-hide white-popup-block">
-	<fieldset class="wrapper">
-          <div class="login__form__info">
-            <h1>Увійдіть щоб продовжити</h1>
-            <div class="login__form__inputs">
-            <input type="text" placeholder="Ім'я" class="login__form__name">
-            <input type="password" placeholder="Пароль" class="login__form__password">
-            </div>
-            <button type="submit" class="login__form__button">Увійти</button>
-            <p class="login__form__text">Єслі ти не гамасек <a href="#">зареєстріруйся</a> за 10 сек</p>
-          </div>
-	</fieldset>
-</form>
+{#<form action="/login/" method="post" id="login-form" class=" login__form mfp-hide white-popup-block">#}
+{#    {% csrf_token %}#}
+{#    {% form %}#}
+{#	<fieldset class="wrapper">#}
+{#          <div class="login__form__info">#}
+{#            <h1>Увійдіть щоб продовжити</h1>#}
+{#            <div class="login__form__inputs">#}
+{#            <input type="text" placeholder="Ім'я" class="login__form__name">#}
+{#            <input type="password" placeholder="Пароль" class="login__form__password">#}
+{#            </div>#}
+{#            <button type="submit" class="login__form__button">Увійти</button>#}
+{#            <p class="login__form__text">Єслі ти не гамасек <a href="#">зареєстріруйся</a> за 10 сек</p>#}
+{#          </div>#}
+{#	</fieldset>#}
+{#</form>#}

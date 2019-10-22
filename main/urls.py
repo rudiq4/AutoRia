@@ -9,7 +9,7 @@ app_name = 'main'
 
 urlpatterns = [
 
-                  url(r'^$', views.vehicle_list, name='vehicle_list'),
+                  url(r'^$', views.index, name='index'),
                   url(r'^carpage/$', views.carpage, name='carpage'),
                   # url(r'^search-form/$', views.search_form),
                   url(r'^search/$', views.search),

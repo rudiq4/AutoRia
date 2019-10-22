@@ -27,6 +27,7 @@ class VehicleInstanceAdmin(admin.ModelAdmin):
     list_display = (
         'user', 'type', 'image', 'price_usd', 'price_uah',
         'mileage', 'city', 'fuel', 'gearbox', 'numberplate')
+    exclude = ('title', 'price_uah')
 
 
 admin.site.register(TestVehicle, TestVehicleAdmin)

@@ -4,25 +4,39 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
-from main.models import TestVehicle
+from main.models import VehicleInstance, TestVehicle
 
 
-def vehicle_list(request):
+# def index(request):
+#     template = 'main/index.html'
+#     ip = request.META.get('REMOTE_ADDR')  # just 4 test
+#     browser = request.META.get('HTTP_USER_AGENT')  # just 4 test
+#     vehicles = TestVehicle.objects.all()
+#     context = {'vehicles': vehicles, 'ip': ip, 'browser': browser}
+#     return render(request, template, context)
+
+
+def index(request):
     template = 'main/index.html'
     ip = request.META.get('REMOTE_ADDR')  # just 4 test
     browser = request.META.get('HTTP_USER_AGENT')  # just 4 test
-    vehicles = TestVehicle.objects.all()
-    context = {'vehicles': vehicles, 'ip': ip, 'browser': browser}
+    posts = VehicleInstance.objects.filter(is_active=True)
+    page = request.GET.get('page')
+    paginator = Paginator(posts, 9)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    context = {
+        'posts': posts, 'page': page, 'ip': ip, 'browser': browser}
     return render(request, template, context)
 
 
 def carpage(request):
     template = 'main/carpage.html'
     return render(request, template)
-
-
-# def search_form(request):
-#     return render_to_response('main/search.html')
 
 
 def search(request):

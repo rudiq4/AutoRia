@@ -1,5 +1,11 @@
 from django import forms
 
 
-class CreatePost(forms.Form):
+class ContactForm(forms.Form):
+    subject = forms.CharField()
+    e_mail = forms.EmailField(required=False)
+    message = forms.CharField
+
+
+class AddPostForm(forms.Form):
     pass

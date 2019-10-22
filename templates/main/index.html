@@ -49,42 +49,42 @@
       </div>
     </section>
     <section class="goods">
-        {% for vehicle in vehicles %}
+        {% include 'main/search.html' %}
+        {% for post in posts %}
     <div class="wrapper">
 
       <div class="goods__car">
         <div class="goods__car__image">
           <a href="#" class="goods__car__image__link"><img
-            src="{{ vehicle.image.url }}"
+            src="{{ post.image.url }}"
             alt=""
             class="goods__car__image-image"
           />
           </a>
         </div>
         <div class="goods__car__description">
-          <a href="#" class="goods__car__description__name">{{ vehicle.title }}</a>
+          <a href="#" class="goods__car__description__name">{{ post.title }}</a>
           <div class="goods__car__description__price">
-            <span class="goods__car__description__price__usd">{{ vehicle.price_usd }} $</span>
-            <p class="goods__car__description__price__uah">{{ vehicle.price_uah }} грн</p>
+            <span class="goods__car__description__price__usd">{{ post.price_usd }} $</span>
+            <p class="goods__car__description__price__uah">{{ post.price_uah }} грн</p>
           </div>
           <div class="goods__car__description__wrapper">
           <div class="goods__car__description__character">
-               <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">{{ vehicle.mileage }}</p>
-            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">{{ vehicle.city }}</p>
-            <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">{{ vehicle.get_fuel_display}}</p>
+               <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">{{ post.mileage }}</p>
+            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">{{ post.city }}</p>
+            <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">{{ post.get_fuel_display}}</p>
             <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/home/manual-transmission.png' %}" alt="">
-              {{ vehicle.get_gearbox_display }}
+              {{ post.get_gearbox_display }}
             </p>
           </div>
           </div>
           <div class="goods__car__description__license">
-            <p class="goods__car__description__license__number">{{ vehicle.numberplate }}</p>
+            <p class="goods__car__description__license__number">{{ post.numberplate }}</p>
           </div>
         </div>
       </div>
-
     </div>
     {% endfor %}
   </section>
-
+{% include 'base/paginator.html' with page=posts %}
 {% endblock %}

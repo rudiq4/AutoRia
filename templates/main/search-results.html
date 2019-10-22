@@ -10,3 +10,5 @@
 {% else %}
     <p>Нажаль, автомобілі які відповідаюь вашом запиту - не знайдені</p>
 {% endif %}
+
+{% include 'base/paginator.html' with page=posts %}
