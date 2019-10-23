@@ -5,27 +5,27 @@
 <div class="wrapper">
 <section class="auto">
       <div class="auto__title">
-        <h1 class="auto__title__name">Ford C-Max 2010</h1>
+        <h1 class="auto__title__name">{{ post.title }}</h1>
       </div>
       <div class="wrapper">
         <div class="auto__info__wrapper">
           <div class="auto__info__fixed">
             <div class="auto__info">
               <div class="auto__info__description">
-                <span class="auto__info__description__price__usd">7 800 $</span>
-                <p class="auto__info__description__price__uah">196 170 грн</p>
+                <span class="auto__info__description__price__usd">{{ post.price_usd }} $</span>
+                <p class="auto__info__description__price__uah">{{ post.price_uah }} UAH</p>
               </div>
             </div>
             <div class="auto__user">
               <div class="auto__user__description">
                 <img
-                  src="{% static 'IMG/carpage/avatar.png' %}"
+                  src="{{ post.image.url }}"
                   alt=""
                   class="auto__user__description__image"
                 />
-                <p class="auto__user__description__name">Орест</p>
+                <p class="auto__user__description__name">{{ post.user }}</p>
               </div>
-              <p class="auto__user__address">Дпріпропердинськ</p>
+              <p class="auto__user__address">{{ post.location }}</p>
               <span class="auto__user__number">(096) ххх хх хх</span>
             </div>
           </div>
@@ -34,7 +34,7 @@
           <div
             class="auto__character__gallery">
               <img class="auto__character__gallery__img"
-                src="{% static 'IMG/carpage/ford_c-max__296657900f.jpg' %}">
+                src="{{ post.image.url }}">
           </div>
           <div class="auto__character__wrapper">
             <div class="auto__character__point">

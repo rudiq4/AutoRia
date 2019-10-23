@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
 
@@ -120,12 +121,14 @@ class VehicleInstance(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return str(self.id)
+        return "{} {}".format(self.brand, self.type)
+
+    def get_absolute_url(self):
+        return reverse('main:PostDetail', args=[self.id])
 
     def save(self, *args, **kwargs):
         self.title = "{} {}".format(self.brand, self.type)
         print(self.title)
-        self.price_uah = int(self.price_usd)*25
+        self.price_uah = int(self.price_usd) * 25
 
         super(VehicleInstance, self).save(*args, **kwargs)
-

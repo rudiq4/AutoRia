@@ -34,9 +34,10 @@ def index(request):
     return render(request, template, context)
 
 
-def carpage(request):
-    template = 'main/carpage.html'
-    return render(request, template)
+def post_detail(request, id):
+    post = get_object_or_404(VehicleInstance, id=id, is_active=True)
+    template = 'main/post-detail.html'
+    return render_to_response(template, {'post': post, })
 
 
 def search(request):

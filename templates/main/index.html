@@ -55,7 +55,7 @@
 
       <div class="goods__car">
         <div class="goods__car__image">
-          <a href="#" class="goods__car__image__link"><img
+          <a href="{{ post.get_absolute_url }}" class="goods__car__image__link"><img
             src="{{ post.image.url }}"
             alt=""
             class="goods__car__image-image"
@@ -63,7 +63,7 @@
           </a>
         </div>
         <div class="goods__car__description">
-          <a href="#" class="goods__car__description__name">{{ post.title }}</a>
+          <a href="{{ post.get_absolute_url }}" class="goods__car__description__name">{{ post.title }}</a>
           <div class="goods__car__description__price">
             <span class="goods__car__description__price__usd">{{ post.price_usd }} $</span>
             <p class="goods__car__description__price__uah">{{ post.price_uah }} грн</p>
