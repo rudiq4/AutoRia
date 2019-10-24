@@ -1173,3 +1173,10 @@ screen and (max-height: 300px) {
 .pagination li a:visited{
     color: #000;
    }
+
+
+.account__info__cabinet{
+     width: 100%;
+     background: #046380;
+     margin-left: 10px;
+}
