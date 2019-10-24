@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import TestVehicle, Category, Brand, Type, VehicleInstance
-
-
-class TestVehicleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'price_usd', 'price_uah', 'mileage', 'city', 'fuel', 'gearbox', 'numberplate')
+from .models import Category, Brand, Type, VehicleInstance
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -26,11 +22,10 @@ class TypeAdmin(admin.ModelAdmin):
 class VehicleInstanceAdmin(admin.ModelAdmin):
     list_display = (
         'user', 'type', 'image', 'price_usd', 'price_uah',
-        'mileage', 'city', 'fuel', 'gearbox', 'numberplate')
+        'mileage', 'location', 'fuel', 'gearbox', 'numberplate')
     exclude = ('title', 'price_uah')
 
 
-admin.site.register(TestVehicle, TestVehicleAdmin)
 admin.site.register(VehicleInstance, VehicleInstanceAdmin)
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Brand, BrandAdmin)

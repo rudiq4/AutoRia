@@ -41,27 +41,22 @@
               <ul>
                 <li>Двигун:</li>
                 <li>Коробка передач:</li>
-                <li>Привід:</li>
-                <li>Розхід топлива на 100км:</li>
               </ul>
             </div>
             <div class="auto__character__text">
               <ul>
                 <li>
-                  3.0 л (400 л.с. • 294.1 кВт) • Дизтопливо
+                  {{ post.engine_capacity }} • {{ post.get_fuel_display}}
                 </li>
                 <li>
-                  ручна якшо привід задній
-                </li>
-                <li>
-                  канешно шо задній
-                </li>
-                <li>
-                  6 л
+                  {{ post.get_gearbox_display }}
                 </li>
               </ul>
             </div>
           </div>
+            <div class="zoidberg">
+                {{ post.description }}
+            </div>
         </div>
       </div>
     </section>

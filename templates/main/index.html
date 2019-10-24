@@ -49,7 +49,6 @@
       </div>
     </section>
     <section class="goods">
-        {% include 'main/search.html' %}
         {% for post in posts %}
     <div class="wrapper">
 
@@ -71,16 +70,18 @@
           <div class="goods__car__description__wrapper">
           <div class="goods__car__description__character">
                <p class="goods__car__description__character__km goods__car__description__character__basis"><img src="{% static 'IMG/home/speedometer.png' %}" alt="">{{ post.mileage }}</p>
-            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">{{ post.city }}</p>
+            <p class="goods__car__description__character__city goods__car__description__character__basis"><img src="{% static 'IMG/home/location-point.png' %}" alt="">{{ post.location }}</p>
             <p class="goods__car__description__character__fuel goods__car__description__character__basis"><img src="{% static 'IMG/home/gasoline.png' %}" alt="">{{ post.get_fuel_display}}</p>
             <p class="goods__car__description__character__transmission goods__car__description__character__basis"><img src="{% static 'IMG/home/manual-transmission.png' %}" alt="">
               {{ post.get_gearbox_display }}
             </p>
           </div>
           </div>
+            {% if post.numberplate %}
           <div class="goods__car__description__license">
             <p class="goods__car__description__license__number">{{ post.numberplate }}</p>
           </div>
+            {% endif %}
         </div>
       </div>
     </div>
