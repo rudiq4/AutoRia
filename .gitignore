@@ -105,4 +105,6 @@ db.sqlite3
 
 /dist/
 
+media/
+
 secret.py

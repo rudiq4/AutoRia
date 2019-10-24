@@ -5,27 +5,27 @@
 <div class="wrapper">
 <section class="auto">
       <div class="auto__title">
-        <h1 class="auto__title__name">Ford C-Max 2010</h1>
+        <h1 class="auto__title__name">{{ post.title }}</h1>
       </div>
       <div class="wrapper">
         <div class="auto__info__wrapper">
           <div class="auto__info__fixed">
             <div class="auto__info">
               <div class="auto__info__description">
-                <span class="auto__info__description__price__usd">7 800 $</span>
-                <p class="auto__info__description__price__uah">196 170 грн</p>
+                <span class="auto__info__description__price__usd">{{ post.price_usd }} $</span>
+                <p class="auto__info__description__price__uah">{{ post.price_uah }} UAH</p>
               </div>
             </div>
             <div class="auto__user">
               <div class="auto__user__description">
                 <img
-                  src="{% static 'IMG/carpage/avatar.png' %}"
+                  src="{{ post.image.url }}"
                   alt=""
                   class="auto__user__description__image"
                 />
-                <p class="auto__user__description__name">Орест</p>
+                <p class="auto__user__description__name">{{ post.user }}</p>
               </div>
-              <p class="auto__user__address">Дпріпропердинськ</p>
+              <p class="auto__user__address">{{ post.location }}</p>
               <span class="auto__user__number">(096) ххх хх хх</span>
             </div>
           </div>
@@ -34,34 +34,29 @@
           <div
             class="auto__character__gallery">
               <img class="auto__character__gallery__img"
-                src="{% static 'IMG/carpage/ford_c-max__296657900f.jpg' %}">
+                src="{{ post.image.url }}">
           </div>
           <div class="auto__character__wrapper">
             <div class="auto__character__point">
               <ul>
                 <li>Двигун:</li>
                 <li>Коробка передач:</li>
-                <li>Привід:</li>
-                <li>Розхід топлива на 100км:</li>
               </ul>
             </div>
             <div class="auto__character__text">
               <ul>
                 <li>
-                  3.0 л (400 л.с. • 294.1 кВт) • Дизтопливо
+                  {{ post.engine_capacity }} • {{ post.get_fuel_display}}
                 </li>
                 <li>
-                  ручна якшо привід задній
-                </li>
-                <li>
-                  канешно шо задній
-                </li>
-                <li>
-                  6 л
+                  {{ post.get_gearbox_display }}
                 </li>
               </ul>
             </div>
           </div>
+            <div class="zoidberg">
+                {{ post.description }}
+            </div>
         </div>
       </div>
     </section>

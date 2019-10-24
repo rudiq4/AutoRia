@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
 
@@ -57,35 +58,6 @@ class Type(models.Model):
         verbose_name_plural = 'Моделі автомобілів'
 
 
-class TestVehicle(models.Model):
-    FUEL_CHOICE = (
-        (1, 'Дизель'),
-        (2, 'Бензин'),
-        (3, 'Газ/Бензин'),
-        (4, 'Електро'),
-        (5, 'Гібрид'),
-    )
-    GEARBOX_CHOICE = (
-        (1, 'Ручна'),
-        (2, 'Автоматична'),
-    )
-    title = models.CharField('Назва автомобіля', max_length=32)
-    image = models.ImageField('Зображення', upload_to='test_img/')
-    price_usd = models.CharField('Ціна в у.о.', max_length=32)
-    price_uah = models.CharField('Ціна в грн.', max_length=32)
-    mileage = models.CharField('Пробіг', max_length=32)
-    city = models.CharField('Місто', max_length=32)
-    fuel = models.IntegerField('Тип пального', choices=FUEL_CHOICE)
-    gearbox = models.IntegerField('Тип КПП', choices=GEARBOX_CHOICE)
-    numberplate = models.CharField('Номери', max_length=8)
-
-    class Meta:
-        verbose_name = 'Just for test'
-
-    def __str__(self):
-        return self.title
-
-
 class VehicleInstance(models.Model):
     FUEL_CHOICE = (
         (1, 'Дизель'),
@@ -100,18 +72,20 @@ class VehicleInstance(models.Model):
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Користувач")
     is_active = models.BooleanField('Актив/Неактив', default=False)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категорія")
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Марка")
+    type = models.ForeignKey(Type, on_delete=models.CASCADE, verbose_name="Модель")
     title = models.CharField('Назва', max_length=64, blank=True)
     image = models.ImageField('Зображення', upload_to='test_img/')
     price_usd = models.CharField('Ціна в у.о.', max_length=32)
     price_uah = models.CharField('Ціна в грн.', max_length=32, blank=True)
     mileage = models.CharField('Пробіг', max_length=32)
-    city = models.CharField('Місто', max_length=32)
+    location = models.CharField('Місто', max_length=32)
     fuel = models.IntegerField('Тип пального', choices=FUEL_CHOICE)
     gearbox = models.IntegerField('Тип КПП', choices=GEARBOX_CHOICE)
-    numberplate = models.CharField('Номери', max_length=8)
+    engine_capacity = models.DecimalField('Обєм двигуна', max_digits=3, decimal_places=1, blank=True)
+    description = models.TextField('Опис', max_length=1000, blank=True)
+    numberplate = models.CharField('Номери', max_length=8, blank=True)
     created = models.DateTimeField('Створено', auto_now_add=True)
     updated = models.DateTimeField('Оновлено', auto_now=True)
 
@@ -120,12 +94,13 @@ class VehicleInstance(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return str(self.id)
+        return "{} {}".format(self.brand, self.type)
+
+    def get_absolute_url(self):
+        return reverse('main:PostDetail', args=[self.id])
 
     def save(self, *args, **kwargs):
         self.title = "{} {}".format(self.brand, self.type)
-        print(self.title)
-        self.price_uah = int(self.price_usd)*25
+        self.price_uah = int(self.price_usd) * 25
 
         super(VehicleInstance, self).save(*args, **kwargs)
-

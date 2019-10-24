@@ -4,6 +4,7 @@ from registration.forms import RegistrationForm, LoginForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
@@ -26,6 +27,7 @@ class RegistrationView(View):
             password = form.cleaned_data['password']
             new_user.set_password(password)
             password_check = form.cleaned_data['password_check']
+            # phone = form.cleaned_data['phone']
             email = form.cleaned_data['email']
             new_user.save()
             UserAccount.objects.create(user=User.objects.get(username=new_user.username),

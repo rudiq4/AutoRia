@@ -10,14 +10,11 @@ app_name = 'main'
 urlpatterns = [
 
                   url(r'^$', views.index, name='index'),
-                  url(r'^carpage/$', views.carpage, name='carpage'),
+                  url(r'^(?P<id>\d+)/$', views.post_detail, name='PostDetail'),
                   # url(r'^search-form/$', views.search_form),
-                  url(r'^search/$', views.search),
+                  # url(r'^search/$', views.search),
 
-
-
-                  #url(r'^test/$', views.test_view, name='test'),
-
+                  # url(r'^test/$', views.test_view, name='test'),
 
               ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
