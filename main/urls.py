@@ -11,6 +11,8 @@ urlpatterns = [
 
                   url(r'^$', views.index, name='index'),
                   url(r'^(?P<id>\d+)/$', views.post_detail, name='PostDetail'),
+                  path('add_post/', AddPost.as_view(), name='AddPost'),
+
                   # url(r'^search-form/$', views.search_form),
                   # url(r'^search/$', views.search),
 

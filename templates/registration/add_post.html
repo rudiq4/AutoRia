@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+    Додавання посту
+{% endblock %}
+{% block content %}
+    <section class="registration">
+        <div class="wrapper">
+            <h1>Add Post</h1>
+            <form action="" method="POST" class="registration__form">
+                <div class="registration__form__inputs">
+                    {{ form.error }}
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" class="registration__form__button">Подати</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
 from main.models import VehicleInstance
+from main.forms import AddPostForm
 
 
 def index(request):
@@ -30,6 +31,30 @@ def post_detail(request, id):
     template = 'main/post-detail.html'
     return render_to_response(template, {'post': post, })
 
+
+# @login_required
+# def AddPost(request, item_id):
+#     item = get_object_or_404(VehicleInstance, id=item_id)
+#     form = forms.ItemDescForm(request.POST or None, instance=item)
+#     context = { 'item': item, 'form': form, }
+#     if request.method == 'POST' and form.is_valid():
+#         form.save(request.user)
+#         return redirect('item_desc', item_id=item.id)
+#     return direct_to_template(request, 'form.html', context)
+
+
+class AddPost(View):
+    def get(self, request):
+        form = AddPostForm
+        return render(request, 'registration/add_post.html', context={'form': form})
+
+    def post(self, request):
+        bound_form = AddPostForm(request.POST)
+
+        if bound_form.is_valid():
+            # new_review = bound_form.save()
+            return redirect('main:index')
+        return render(request, 'registration/add_post.html', context={'form': bound_form})
 
 # def search(request):
 #     errors = []
